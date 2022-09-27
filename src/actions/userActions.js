@@ -38,7 +38,7 @@ export const login = (email, password) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post('https://mjjewelers.herokuapp.comhttps://mjjewelers.herokuapp.com/api/v1/login', { email, password }, config)
+        const { data } = await axios.post('https://mjjewelers.herokuapp.com/api/v1/login', { email, password }, config)
 
         dispatch({
             type: LOGIN_SUCCESS,
@@ -65,7 +65,7 @@ export const register = (userData) => async (dispatch) => {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        const { data } = await axios.post('https://mjjewelers.herokuapp.comhttps://mjjewelers.herokuapp.com/api/v1/register', userData, config)
+        const { data } = await axios.post('https://mjjewelers.herokuapp.com/api/v1/register', userData, config)
 
         dispatch({
             type: REGISTER_USER_SUCCESS,
@@ -88,7 +88,7 @@ export const loadUser = () => async (dispatch) => {
             type: LOAD_USER_REQUEST
         })
 
-        const { data } = await axios.get('https://mjjewelers.herokuapp.comhttps://mjjewelers.herokuapp.com/api/v1/me')
+        const { data } = await axios.get('https://mjjewelers.herokuapp.com/api/v1/me')
 
         dispatch({
             type: LOAD_USER_SUCCESS,
@@ -112,7 +112,7 @@ export const updateProfile = (userData) => async (dispatch) => {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        const { data } = await axios.put('https://mjjewelers.herokuapp.comhttps://mjjewelers.herokuapp.com/api/v1/me/update', userData, config)
+        const { data } = await axios.put('https://mjjewelers.herokuapp.com/api/v1/me/update', userData, config)
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
