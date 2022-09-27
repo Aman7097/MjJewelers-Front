@@ -112,7 +112,7 @@ export const updateProfile = (userData) => async (dispatch) => {
                 'Content-Type': 'multipart/form-data'
             }
         }
-        const { data } = await axios.put('https://mjjewelers.herokuapp.com/api/v1/me/update', userData, config)
+        const { data } = await axios.put('/api/v1/me/update', userData, config)
 
         dispatch({
             type: UPDATE_PROFILE_SUCCESS,
@@ -136,7 +136,7 @@ export const updatePassword = (passwords) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.put('https://mjjewelers.herokuapp.com/api/v1/password/update', passwords, config)
+        const { data } = await axios.put('/api/v1/password/update', passwords, config)
 
         dispatch({
             type: UPDATE_PASSWORD_SUCCESS,
@@ -160,7 +160,7 @@ export const forgotPassword = (email) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.post('https://mjjewelers.herokuapp.com/api/v1/password/forgot', email, config)
+        const { data } = await axios.post('/api/v1/password/forgot', email, config)
 
         dispatch({
             type: FORGOT_PASSWORD_SUCCESS,
@@ -185,7 +185,7 @@ export const resetPassword = (token,passwords) => async (dispatch) => {
                 'Content-Type': 'application/json'
             }
         }
-        const { data } = await axios.put(`https://mjjewelers.herokuapp.com/api/v1/password/reset/${token}`, passwords, config)
+        const { data } = await axios.put(`/api/v1/password/reset/${token}`, passwords, config)
 
         dispatch({
             type: NEW_PASSWORD_SUCCESS,
@@ -203,7 +203,7 @@ export const resetPassword = (token,passwords) => async (dispatch) => {
 // Logout the user
 export const logout = () => async (dispatch) => {
     try {
-        await axios.get('https://mjjewelers.herokuapp.com/api/v1/logout')
+        await axios.get('/api/v1/logout')
 
         dispatch({
             type: LOGOUT_SUCCESS,

@@ -52,7 +52,7 @@ export const getProductDetails = (id) => async (dispatch) => {
     try {
         dispatch({ type: PRODUCT_DETAILS_REQUEST })
 
-        const { data } = await axios.get(`https://mjjewelers.herokuapp.com/api/v1/product/${id}`)
+        const { data } = await axios.get(`/api/v1/product/${id}`)
         console.log(data)
 
         dispatch({
